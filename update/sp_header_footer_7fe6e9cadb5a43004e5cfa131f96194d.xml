@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category/>
+        <client_script><![CDATA[function() {
+  // widget controller
+  var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.sample-footer {&#13;
+  background-color: #efede9; &#13;
+  padding-top: 10px;&#13;
+  padding-bottom: 10px;&#13;
+    padding-left: 57.9px;&#13;
+    padding-right: 57.9px;&#13;
+  font-size: 12px;&#13;
+  object-fit: contain;&#13;
+	font-family: LucidaGrande;&#13;
+	font-size: 12px;&#13;
+	line-height: 2.08;&#13;
+	text-align: center;&#13;
+	color: #929291;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>PI DS Footer</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+ data.time = new GlideDateTime().getDisplayValue();
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-11-09 11:12:41</sys_created_on>
+        <sys_id>7fe6e9cadb5a43004e5cfa131f96194d</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>PI DS Footer</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sp_header_footer_7fe6e9cadb5a43004e5cfa131f96194d</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-02 22:43:44</sys_updated_on>
+        <template><![CDATA[ <div class="sample-footer">	
+  © 2017 ServiceNow. ${All rights reserved.}
+ </div>]]></template>
+    </sp_header_footer>
+</record_update>

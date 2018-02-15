@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piBadge</name>
+        <script><![CDATA[(function(angular) {
+	var app = angular.module('pi.core');
+	app.directive('piBadge', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@',
+				classHide: '@',
+				count: '='
+			},
+			template: '<div class="pi-badge-container"><ng-transclude></ng-transclude>&nbsp;<span class="pi-badge-badge {{classes}}">{{count}}</span></div>'
+		};
+	});
+	
+})(angular);]]></script>
+        <script_name>piBadge</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-10-30 16:33:51</sys_created_on>
+        <sys_id>637017bedb0a8b0086da7d5e0f9619ad</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>x_pisn_pids.piBadge</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_637017bedb0a8b0086da7d5e0f9619ad</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-03 12:56:23</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

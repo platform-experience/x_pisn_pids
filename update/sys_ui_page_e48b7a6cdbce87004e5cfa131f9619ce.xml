@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>true</direct>
+        <endpoint>x_pisn_pids_piCard.do</endpoint>
+        <html><![CDATA[<div class="panel panel-{{state}} pi-card-container {{classes}}" ng-click="onClick({input: input})">
+    <div class="panel-heading" ng-transclude="header"></div>
+    <div class="panel-body" ng-transclude="body"></div>
+    <div class="panel-footer" ng-transclude="footer"></div>
+</div>]]></html>
+        <name>piCard</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-10-23 15:15:53</sys_created_on>
+        <sys_id>e48b7a6cdbce87004e5cfa131f9619ce</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>piCard</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_page_e48b7a6cdbce87004e5cfa131f9619ce</sys_update_name>
+        <sys_updated_by>fabio</sys_updated_by>
+        <sys_updated_on>2017-11-06 14:28:11</sys_updated_on>
+    </sys_ui_page>
+</record_update>

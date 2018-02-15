@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image/>
+        <name>go-up.svg</name>
+        <size_bytes>2114</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-24 12:28:27</sys_created_on>
+        <sys_id>93180772db6e83000c68f1910f9619a3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>go-up.svg</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>db_image_93180772db6e83000c68f1910f9619a3</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-11-24 12:28:33</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes/>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <image_height/>
+        <image_width/>
+        <size_bytes>2114</size_bytes>
+        <size_compressed>1072</size_compressed>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-24 12:28:33</sys_created_on>
+        <sys_id>d9288772db6e83000c68f1910f9619c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-11-24 12:28:33</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>93180772db6e83000c68f1910f9619a3</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="d9288772db6e83000c68f1910f9619c8">d9288772db6e83000c68f1910f9619c8</sys_attachment>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-24 12:28:33</sys_created_on>
+        <sys_id>1d288772db6e83000c68f1910f9619c8</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>fVVNb9s4FLz3V3C1lxaQZL73SD6yiFOgBtJT0UN2L3tzbMUW4liBrHzs/vodyk6qXcR1AlgcUsM384b0xZeX+515avpD2+3nBdW2MM1+1a3b/WZe/PnHVRULcxiW+/Vy1+2bebHvii+XHy4OTxvz3K6H7byQ8PBSmG3TbrbD6+ipbZ6/di/zwhprJOC/mG5ChcG2+8O82A7Dw+fZ7Pn5uX6Wuus3M7bWzkB/WvL5Zdfu795bSCml2ThbXH4w+Fz8VlXmW7Nv+uXQ9Z/N9V0zrLbGaU3mo/OO+ZOpzITopts29+3yJLdedfezw/GdqjpRDu2way6/9d3jw8XsODhOrJvD6nLRN8uhWcOJYXvarr6YjVOvq24PlxnB1xHZmHY9L753N+2uyc723d3o6v5tVJ18hUm37W73Opmfq/5xh9XNU7Pv1uuT7Akt2erIXFXV9ePNfTtU35uhb1eFGfrl/nDb9ffzYnzcofCPlbDWdvyUpiKN9jT6NOGe8G+66vHhDBdreKP6BdOEbXT1DJunN7JfMY1sq7Zf7ZqR8sfTcvdq2+8aVMJVYVbIISHGq7+P3/34hbYcXzzDeqzxZrm6O1MixYne2h9rNH03jM6yvtVtJoZPXqomb01Y3U/Wn8qn3Ucc/mn67k3m1dereOXPmDNKeVginjl1WrtIzqvT0poFtqfIjtSX2IlQiyPx3gDPS6JIxgUFRFaijCfHgQNl3HlL7GwIZpE1iSYnDhNsFa+zjSbWJPmP83oVy3ghCGiiC9FF60s0WS0nn2uJpI5tYIBkvVgXciUavXc2UUZFI0nIdaiXEIhSRtUKs1ez8LVytCpEpdQsNibr2Uit1iUBXPqaE9RHp4bqoElcYi61Fs+WgyOzoNqDjCChzL1BOap58ftoiBRhGwEN3gWbIijyfik6irFMtRIyGJ03qE1wAaUUSiKIEoa/WUjwqCGLluyKUHDZi+RAAW/LnAaRiJ3gpnXWawySUXYxsTpQJHUwIzvk0E9yKcXRTh8C2pBR1BU4ZeM5ZecsGHxNWKAaTKiTJKgaaaMkm8wCmEXLoW4EbfAR/Q81CkExR1RDQvM0o4LC3AnFMzpjFg6exKjBoUmcg4a8OMM5gOxCiCXSjXLA53DCxQYLDcGXkKlJOSSUgRUhMaKimnFc4ARRWI7uWheRkQxbZusDA6bklYJAH2wJTMl5sFQIq5KPHGHP2CsmJEpMnggwAelOPucAegg68gZIhKCevN5SSFmhWaB6hyqR3hJKnSBtSBiUorkwrMS82hAtas8O+pzN8USw9z7K6CuoPPsEmIi9kCVFY4jFsWg+P0gX3AqZBA0TQY/C8bQKQYYTxgiDFLNRfhxMTvVfxXhvXW+XD02+4/LZP3PDzTbvXM3/B/8DvA3Gh4v8M335Lwb9XgFCCAAA</data>
+        <length>1416</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="d9288772db6e83000c68f1910f9619c8">d9288772db6e83000c68f1910f9619c8</sys_attachment>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-24 12:28:33</sys_created_on>
+        <sys_id>9d288772db6e83000c68f1910f9619c8</sys_id>
+    </sys_attachment_doc>
+</record_update>

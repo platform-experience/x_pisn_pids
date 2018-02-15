@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category/>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.button-clear-custom {
+  background-color: #a74141;
+  border: solid 0.5px #ffffff;
+  color: #ffffff;
+}
+
+.button-apply-custom {
+  background-color: #f95050;
+  color: #ffffff;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pi-ds-custom-header</id>
+        <internal>false</internal>
+        <link/>
+        <name>PI DS Custom Header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+data.menu = [];
+var temp = {};
+
+temp = {};
+temp.name = 'Homepage';
+temp.current = 'true';
+temp.icon = 'fa fa-home fa-2x';
+temp.link = '#';
+data.menu.push(temp);
+
+temp = {};
+temp.name = 'Profile';
+temp.icon = 'fa fa-user fa-2x';
+temp.link = '#';
+data.menu.push(temp);
+
+temp = {};
+temp.name = 'Submissions';
+temp.icon = 'fa fa-file-text-o fa-2x';
+temp.link = '#';
+data.menu.push(temp);
+
+temp = {};
+temp.name = 'Approvals';
+temp.icon = 'fa fa-check-circle-o fa-2x';
+temp.link = '#';
+data.menu.push(temp);
+
+temp = {};
+temp.name = 'Favorites';
+temp.icon = 'fa fa-star-o fa-2x';
+temp.link = '#';
+data.menu.push(temp);
+
+
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-11-09 11:50:42</sys_created_on>
+        <sys_id>599fad82db9a43004e5cfa131f96199b</sys_id>
+        <sys_mod_count>71</sys_mod_count>
+        <sys_name>PI DS Custom Header</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sp_widget_599fad82db9a43004e5cfa131f96199b</sys_update_name>
+        <sys_updated_by>fabio</sys_updated_by>
+        <sys_updated_on>2017-11-11 14:50:28</sys_updated_on>
+        <template><![CDATA[<div class="row pi-main-container">
+  <pi-header menu="data.menu" logo="snc-logo-reverse.png">
+    
+    <pi-button data-on-click="c.Ciao1()" data-on-click-icon="c.testFunction('go back!')" icon-border="true">
+    <icon>
+      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+    </icon>
+    <main>Button border</main>
+    <side>
+      <child data-on-click="c.Ciao2()" classes="button-clear-custom">Clear</child>
+      <child data-on-click="c.Ciao3()" classes="button-apply-custom">Apply</child>
+    </side>
+  	</pi-button>
+  
+  </pi-header>
+  
+  <div class="pi-content-container">
+    
+    
+    
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

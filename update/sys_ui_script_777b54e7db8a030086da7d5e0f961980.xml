@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piButton</name>
+        <script><![CDATA[(function(angular) {
+	var app = angular.module('pi.core');
+	app.directive('piButton', function() {
+		return {
+			restrict: 'E',
+			replace: true,
+			transclude: {
+				'icon': '?icon',
+				'main': '?main',
+				'side': '?side'
+			},
+			scope: {
+				classes: '@',
+				onClick: '&',
+				onClickIcon: '&',
+				iconBorder: '@',
+				center: '@',
+				idbutton: '@',
+				activeState: '=?',
+				activeClasses: '@',
+				classesMain: '@'
+			},
+			link: function(scope) {
+				
+				if(!scope.glyphicon)
+					scope.glyphicon = 'glyphicon-menu-left';
+				
+				if(!scope.activeState)
+					scope.activeState = false;
+				
+					
+			},
+			controller: function($scope, $transclude) {
+				$scope.transcludeIconPresent = function() {
+				  return $transclude.isSlotFilled('icon');
+				};
+				$scope.transcludeSidePresent = function() {
+				  return $transclude.isSlotFilled('side');
+				};
+			},
+			templateUrl: '/x_pisn_pids_piButton.do'
+		};
+	});
+	app.directive('child', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@',
+				onClick: '&'
+			},
+			template: '<a class="btn btn-default nohover pi-button-child {{classes}}" ng-click="onClick();$event.stopPropagation()" role="button" ng-transclude></a>'
+		};
+	});
+	
+	
+	
+})(angular);]]></script>
+        <script_name>piButton</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-11-01 11:19:33</sys_created_on>
+        <sys_id>777b54e7db8a030086da7d5e0f961980</sys_id>
+        <sys_mod_count>106</sys_mod_count>
+        <sys_name>x_pisn_pids.piButton</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_777b54e7db8a030086da7d5e0f961980</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-03 16:38:32</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

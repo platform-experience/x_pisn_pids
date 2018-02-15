@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piMqMsg</name>
+        <script><![CDATA[(function(angular) {
+	var app = angular.module('pi.core');
+	app.directive('piMqMsg', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@'
+			},
+			template: '<div class="pi-message-container {{classes}}"><div ng-transclude></div></div>'
+		};
+	});
+	
+})(angular);]]></script>
+        <script_name>piMqMsg</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-12-03 12:47:59</sys_created_on>
+        <sys_id>19222d39dbb20b000c68f1910f9619ec</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_pisn_pids.piMqMsg</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_19222d39dbb20b000c68f1910f9619ec</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-03 13:19:25</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piGoUp</name>
+        <script><![CDATA[(function(angular) {
+  var app = angular.module('pi.core');
+  app.directive('piGoUp', function($window) {
+    return {
+      replace: true,
+      transclude: true,
+      scope: {
+        classes: '@',
+        image: '@',
+        idElement: '@',
+        scrollElement: '@',
+        pageYOffset: '@',
+		onClick: '&'
+      },
+      link: function(scope, element, attrs) {
+        if (!scope.image) scope.image = 'go-up.svg';
+        if (!scope.scrollElement) scope.scrollElement = '.sp-scroll';
+        if (!scope.pageYOffset) scope.pageYOffset = 200;
+        scope.show = false;
+        scope.scrolln = $(scope.scrollElement)[0].scrollTop;
+
+        angular.element($(scope.scrollElement)).bind('scroll', function(e) {
+          scope.scrolln = $(scope.scrollElement)[0].scrollTop;
+          //console.log('scope.scrolln', scope.scrolln);
+          if (scope.scrolln >= scope.pageYOffset) {
+            scope.show = true;
+          } else {
+            scope.show = false;
+          }
+          scope.$apply(function() {
+            scope.show = scope.show;
+          });
+        });
+      },
+      controller: function(
+        $scope,
+        $location,
+        $anchorScroll,
+        $document,
+        $window
+      ) {
+        $scope.goTo = function(idelement) {
+          $location.hash(idelement);
+          $anchorScroll();
+        };
+      },
+      template:
+        '<div ng-show="show" ng-click="onClick()" class="pi-go-up {{classes}}"><div class="pi-go-up-text" ng-transclude></div><div><img src="{{image}}" ng-click="goTo(idElement)"></div></div>'
+    };
+  });
+})(angular);
+]]></script>
+        <script_name>piGoUp</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-24 12:33:35</sys_created_on>
+        <sys_id>09a88f72db6e83000c68f1910f961949</sys_id>
+        <sys_mod_count>162</sys_mod_count>
+        <sys_name>x_pisn_pids.piGoUp</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_09a88f72db6e83000c68f1910f961949</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-02 00:23:31</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

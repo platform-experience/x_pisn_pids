@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Renders entries on a timeline&#13;
+&#13;
+Example usage: &#13;
+&#13;
+&lt;pi-timeline&gt;&#13;
+  &lt;pi-timeline-entry&gt;&#13;
+     &lt;pi-timeline-badge&gt;&lt;img src="now-logo.png" /&gt;&lt;/pi-timeline-badge&gt;&#13;
+     &lt;pi-timeline-panel&gt;&#13;
+          &lt;div&gt;Something new happened at 16:00&lt;/div&gt;&#13;
+     &lt;/pi-timeline-panel&gt;&#13;
+  &lt;/pi-timeline-entry&gt;&#13;
+  &lt;pi-timeline-entry&gt;&#13;
+     &lt;pi-timeline-badge&gt;&lt;img src="now-logo.png" /&gt;&lt;/pi-timeline-badge&gt;&#13;
+     &lt;pi-timeline-panel&gt;&#13;
+          &lt;div&gt;Something happened at 15:00&lt;/div&gt;&#13;
+     &lt;/pi-timeline-panel&gt;&#13;
+  &lt;/pi-timeline-entry&gt;&#13;
+&lt;/pi-timeline&gt;&#13;
+</description>
+        <global>false</global>
+        <name>x_pisn_pids.piTimeline</name>
+        <script><![CDATA[(function() {
+	var app = angular.module('pi.core');
+	app.directive('piTimeline', function() {
+		return {
+			restrict: 'E',
+			replace: true,
+			transclude: true,
+      scope: {},
+      template: '<div class="timeline-container"><ul class="timeline" ng-transclude></ul></div>'
+		};
+  });
+  app.directive('piTimelineEntry', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      scope: {},
+      template: '<li class="timeline-item" ng-transclude></li>'
+    };
+  });
+  app.directive('piTimelineBadge', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      scope: {},
+      template: '<div class="timeline-badge" ng-transclude></div>'
+    };
+  });
+  app.directive('piTimelinePanel', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      scope: {},
+      template: '<div class="timeline-panel"><div class="timeline-panel-inner" ng-transclude></div></div>'
+    };
+  });
+})();]]></script>
+        <script_name>piTimeline</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>chris.hann</sys_created_by>
+        <sys_created_on>2017-11-30 07:55:28</sys_created_on>
+        <sys_id>e261093cdb3a83005c025a6adc961935</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>x_pisn_pids.piTimeline</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_e261093cdb3a83005c025a6adc961935</sys_update_name>
+        <sys_updated_by>chris.hann</sys_updated_by>
+        <sys_updated_on>2017-11-30 15:22:25</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

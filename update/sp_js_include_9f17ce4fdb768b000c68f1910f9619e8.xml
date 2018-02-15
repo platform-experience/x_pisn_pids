@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>x_pisn_pids.piBadge</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-12-07 12:38:47</sys_created_on>
+        <sys_id>9f17ce4fdb768b000c68f1910f9619e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_pisn_pids.piBadge</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_ui_script display_value="x_pisn_pids.piBadge">637017bedb0a8b0086da7d5e0f9619ad</sys_ui_script>
+        <sys_update_name>sp_js_include_9f17ce4fdb768b000c68f1910f9619e8</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-07 12:38:47</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>

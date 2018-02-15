@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_css_include">
+    <sp_css_include action="INSERT_OR_UPDATE">
+        <name>x_pisn_pids.piCoreCSS</name>
+        <source>local</source>
+        <sp_css display_value="x_pisn_pids.piCoreCSS">5b8fe128db4e87004e5cfa131f96196a</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-10-25 12:48:52</sys_created_on>
+        <sys_id>f10da891db0ec70086da7d5e0f961984</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_pisn_pids.piCoreCSS</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sp_css_include_f10da891db0ec70086da7d5e0f961984</sys_update_name>
+        <sys_updated_by>fabio</sys_updated_by>
+        <sys_updated_on>2017-10-30 11:21:15</sys_updated_on>
+        <url/>
+    </sp_css_include>
+</record_update>

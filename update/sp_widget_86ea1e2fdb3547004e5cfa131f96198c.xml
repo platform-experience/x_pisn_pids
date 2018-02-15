@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category/>
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pi-ds-testing-theme</id>
+        <internal>false</internal>
+        <link/>
+        <name>PI DS Testing Theme</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-10-20 10:19:15</sys_created_on>
+        <sys_id>86ea1e2fdb3547004e5cfa131f96198c</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>PI DS Testing Theme</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sp_widget_86ea1e2fdb3547004e5cfa131f96198c</sys_update_name>
+        <sys_updated_by>fabio</sys_updated_by>
+        <sys_updated_on>2017-10-23 10:21:51</sys_updated_on>
+        <template><![CDATA[<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="javascript:void(0)bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="javascript:void(0)">Link
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Link</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:void(0)">Action</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Something else here</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="javascript:void(0)">Separated link</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="javascript:void(0)">One more separated link</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="javascript:void(0)">Link</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:void(0)">Action</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Something else here</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="javascript:void(0)">Separated link</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+
+  <div class="row">
+    <!-- Standard button -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->
+<button type="button" class="btn btn-danger">Danger</button>
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="btn btn-link">Link</button>
+  </div>
+
+    <div class="row">
+        <h1>h1. Bootstrap heading</h1>
+        <h2>h2. Bootstrap heading</h2>
+        <h3>h3. Bootstrap heading</h3>
+        <h4>h4. Bootstrap heading</h4>
+        <h5>h5. Bootstrap heading</h5>
+        <h6>h6. Bootstrap heading</h6>
+
+        <table class="table">
+            <thead class="table-header">
+                <tr>
+                    <th>javascript:void(0)</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <a class="btn btn-default" href="javascript:void(0)" role="button">Link</a>
+        <button class="btn btn-default" type="submit">Button</button>
+        <input class="btn btn-default" type="button" value="Input">
+        <input class="btn btn-default" type="submit" value="Submit">
+
+
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Check me out
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+    </div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>

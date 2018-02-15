@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category/>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	
+	c.showMyPanel = function(tab){
+		console.log(tab);
+	};
+	
+	c.testFunction = function(text) {
+		console.log(text);
+	};
+	
+	c.Ciao1 = function() {
+		console.log('Ciao1');
+	};
+	
+	c.Ciao2 = function() {
+		console.log('Ciao2');
+		
+		c.server.get({
+        filter_sysid: '00b4c376db0a8b0086da7d5e0f96190e'
+    }).then(function(response) {
+        console.log("response.data.badgeCount", response.data.badgeCount);
+        c.data.badgeCount = response.data.badgeCount;
+    });
+		
+		
+	};
+	
+	c.Ciao3 = function() {
+		console.log('Ciao3');
+		c.data.badgeCount = 5;
+	};
+	
+	c.searchValue = function(search) {
+		console.log(search);
+	}
+	
+	c.selectItem = function(item){
+		console.log("item:"+item);
+	}
+	
+	console.log(c);
+	
+	
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.card-custom {
+background: white;
+}
+.card-custom .panel-heading {
+background: white;
+  border-bottom: 0px;
+}
+.card-custom .panel-heading img {
+height: 35px;
+  width: auto;
+}
+.card-custom .panel-body {
+background: white;
+  border-bottom: 0px;
+  padding-top: 0px;
+}
+.card-custom .panel-footer {
+	background: white;
+  border-top: 0px;
+}
+.card-custom .panel-footer span {
+opacity: 0.8;
+	font-size: 10px;
+	line-height: 1.8;
+	letter-spacing: 0.1px;
+	color: #575757;
+}
+.card-custom .panel-body span {
+font-size: 13px;
+	line-height: 1.38;
+	letter-spacing: 0.1px;
+	text-align: center;
+	color: #575757;
+}
+
+.card-custom-body tr:last-child {
+	vertical-align: bottom;
+}
+
+.card-custom-body tr td:first-child {
+width: 141px;
+  border-right: solid 0.5px #dfdfdf;
+  padding-right: 12.5px;
+text-align: center;
+}
+.card-custom-body tr td:last-child {
+padding-left: 12.5px;
+  text-align: left;
+}
+
+
+
+
+.custom-container {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.margin-left {
+margin-left: 1.5px;
+}
+
+.margin-right {
+margin-right: 1.5px;
+}
+
+.button-clear-custom {
+  background-color: #a74141;
+  border: solid 0.5px #ffffff;
+  color: #ffffff;
+}
+
+.button-apply-custom {
+  background-color: #f95050;
+  color: #ffffff;
+}
+
+.pi-button-custom-1 {
+  background-color: $pi-secondary-color-3;
+}
+.pi-button-custom-1:hover {
+  background-color: $pi-secondary-color-3;
+}
+
+
+.circle-custom {
+  position: absolute;
+  right: 15px;
+  top: 4px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+}
+
+.pi-custom-badge {
+  background-color: red;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>pi-ds-testing-components</id>
+        <internal>false</internal>
+        <link/>
+        <name>PI DS Testing Components</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	//data.filters = [];
+	// var gr = new SNC.CertificationProcessing().getFilterRecords('00b4c376db0a8b0086da7d5e0f96190e');
+	
+	// var temp = {};
+	// // Loop over all records defined by the filter
+	// while(gr.next()) {
+	//temp = {};
+	//temp.sysId = gr.getValue('sys_id');
+	//temp.name = gr.getDisplayValue('name');
+	//data.filters.push(temp);
+	//}
+	
+if(input)
+		data.filter_sysid = input.filter_sysid;
+	else
+		data.filter_sysid = '00b4c376db0a8b0086da7d5e0f96190e';
+	
+	data.badgeCount = 0;
+	data.filter = {};
+	var gr = new GlideRecord('cert_filter');
+	gr.addQuery('sys_id', '00b4c376db0a8b0086da7d5e0f96190e');
+	gr.query();
+	if (gr.next()) {
+		data.filter.sys_id = gr.getUniqueValue();
+		data.filter.filter_condition = gr.getDisplayValue('filter_condition');
+		data.filter.table = gr.getDisplayValue('table');
+		
+	}
+
+	data.filterResult = [];
+	var temp2 = {};
+	if(data.filter.filter_condition && data.filter.table){
+		var x = new GlideRecord(data.filter.table);
+		x.addEncodedQuery(data.filter.filter_condition);
+		x.query();
+		while(x.next()) {
+			temp2 = {};
+			temp2.sys_id = x.getUniqueValue();
+			temp2.name = x.getDisplayValue('name');
+			data.filterResult.push(temp2);
+		}
+		
+		data.badgeCount = data.filterResult.length;
+	}
+	
+	
+	
+	data.sampleData = [];
+	
+	//data.sampleData.push({name: 'Ciao'});
+	//data.sampleData.push({name: 'Hi'});
+	//data.sampleData.push({name: 'Hello'});
+	//data.sampleData.push({name: 'Namaste'});
+	
+		data.sampleData.push('Ciao');
+		data.sampleData.push('Hi');
+		data.sampleData.push('Hello');
+	data.sampleData.push('Namaste');
+	
+	
+	
+	
+	
+		
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-10-23 10:29:43</sys_created_on>
+        <sys_id>dc1ab56cdb4e87004e5cfa131f96191a</sys_id>
+        <sys_mod_count>341</sys_mod_count>
+        <sys_name>PI DS Testing Components</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sp_widget_dc1ab56cdb4e87004e5cfa131f96191a</sys_update_name>
+        <sys_updated_by>chris.hann</sys_updated_by>
+        <sys_updated_on>2017-11-30 15:24:50</sys_updated_on>
+        <template><![CDATA[<div class="row">
+  <div class="pi-container">
+
+
+    <div class="custom-container">
+
+      <pi-button data-on-click="c.Ciao1()" data-on-click-icon="c.testFunction('go back!')" icon-border="false">
+        <icon>
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        </icon>
+        <main>Button border</main>
+        <side>
+          <child data-on-click="c.Ciao2()" classes="button-clear-custom">Clear</child>
+          <child data-on-click="c.Ciao3()" classes="button-apply-custom">Apply</child>
+        </side>
+      </pi-button>
+
+    </div>
+
+    <div class="custom-container">
+
+      <pi-button data-on-click="c.Ciao1()" data-on-click-icon="c.testFunction('go back!')" icon-border="false">
+        <icon>
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        </icon>
+        <main>Button border</main>
+        <side>
+          <child data-on-click="c.Ciao2()" classes="button-clear-custom">Confirm</child>
+        </side>
+      </pi-button>
+
+    </div>
+
+
+    <div class="custom-container">
+      <pi-button data-on-click="c.Ciao1()" data-on-click-icon="c.testFunction('go back!')" icon-border="true">
+        <icon>
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        </icon>
+        <main>Button border</main>
+        <side>
+          <child data-on-click="c.Ciao2()" classes="button-clear-custom">Clear</child>
+          <child data-on-click="c.Ciao3()" classes="button-apply-custom">Apply</child>
+        </side>
+      </pi-button>
+    </div>
+
+    <div class="custom-container">
+
+      <pi-button data-on-click="c.Ciao1()">
+        <main>Button</main>
+        <side>
+          <child data-on-click="c.Ciao2()" classes="button-clear-custom">Clear</child>
+          <child data-on-click="c.Ciao3()" classes="button-apply-custom">Apply</child>
+        </side>
+      </pi-button>
+
+    </div>
+
+    <div class="custom-container">
+      <pi-button center="false" data-on-click="c.Ciao1()">
+        <main>Button</main>
+      </pi-button>
+    </div>
+
+    <div class="custom-container">
+      <pi-button center="true" data-on-click="c.Ciao1()" classes="margin-right pi-button-custom-1">
+        <main>Share</main>
+        <side>
+          <span class="glyphicon glyphicon-share-alt pi-button-glyphicon" aria-hidden="true"></span>
+        </side>
+      </pi-button>
+      <pi-button center="true" data-on-click="c.Ciao2()" classes="margin-left pi-button-custom-1">
+        <main>Favorites</main>
+        <side>
+          <span class="glyphicon glyphicon-star-empty pi-button-glyphicon" aria-hidden="true"></span>
+        </side>
+      </pi-button>
+    </div>
+
+    <div class="custom-container">
+      <pi-button data-on-click="c.Ciao1()">
+        <main>Button</main>
+        <side>
+          <span class="glyphicon glyphicon-filter pi-button-glyphicon" aria-hidden="true"></span>
+        </side>
+      </pi-button>
+    </div>
+
+    <div class="custom-container">
+      <pi-button data-on-click="c.Ciao1()">
+        <icon>
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        </icon>
+        <main>Button</main>
+        <side>
+          <span class="glyphicon glyphicon-filter pi-button-glyphicon" aria-hidden="true"></span>
+        </side>
+      </pi-button>
+    </div>
+
+
+
+    <div class="custom-container">
+      <pi-card state="info">
+        <pi-card-header>Lorem Ipsum</pi-card-header>
+        <pi-card-body>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+          dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+          specimen book.</pi-card-body>
+        <pi-card-footer>
+          <button type="button" class="btn btn-danger">Danger</button>
+        </pi-card-footer>
+      </pi-card>
+    </div>
+
+    <div class="custom-container">
+
+      <pi-card state="default" classes="card-custom" data-on-click="c.selectItem('card 1')">
+        <pi-card-header>
+          <img src="logo-sample.png" />
+        </pi-card-header>
+        <pi-card-body>
+
+          <table class="card-custom-body">
+            <tr>
+              <td>
+                <span class="glyphicon glyphicon-signal " aria-hidden="true"></span>
+                <span>63%</span>
+              </td>
+              <td>
+                <span>Consumerize the Employee Service Experience</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>Agent Case Handling Improvement</span>
+              </td>
+              <td>
+                <span>Realized & Public</span>
+              </td>
+            </tr>
+          </table>
+
+        </pi-card-body>
+        <pi-card-footer>
+          <table class="card-custom-body">
+            <tr>
+              <td>
+                <span>Submitted by: Chris Hann</span>
+              </td>
+              <td>
+                <span>Date: 11.10.17</span>
+              </td>
+            </tr>
+          </table>
+
+        </pi-card-footer>
+      </pi-card>
+
+    </div>
+
+    <div class="custom-container">
+      <pi-search records="data.sampleData" dim="true" text="Search" data-on-change="c.searchValue(search)" />
+    </div>
+
+    <div class="custom-container">
+      <pi-tabs>
+        <pi-tab title="Home" data-on-select="c.showMyPanel(tab)"></pi-tab>
+        <pi-tab title="About" data-on-select="c.showMyPanel(tab)"></pi-tab>
+      </pi-tabs>
+    </div>
+
+    <div class="custom-container">
+      <pi-list multi-selection=true>
+        <pi-row data-on-click="c.selectItem('1')">Build Business Apps at Lightspeed</pi-row>
+        <pi-row data-on-click="c.selectItem('2')">Consumerize the Employee Service Experience</pi-row>
+        <pi-row data-on-click="c.selectItem('3')">Manage Cloud Sprawl</pi-row>
+        <pi-row data-on-click="c.selectItem('4')">Consumerize the Employee Service Experience</pi-row>
+        <pi-row data-on-click="c.selectItem('5')">Consumerize the Employee Service Experience</pi-row>
+      </pi-list>
+    </div>
+
+    <div class="custom-container">
+      <pi-sections>
+        <pi-section title="Strategic Outcome" data-on-select="c.showMyPanel(tab)"></pi-section>
+        <pi-section title="Customer Outcome" data-on-select="c.showMyPanel(tab)"></pi-section>
+        <pi-section title="Value Measure" data-on-select="c.showMyPanel(tab)"></pi-section>
+      </pi-sections>
+    </div>
+
+  </div>
+  <div class="custom-container">
+    <pi-timeline>
+      <pi-timeline-entry>
+        <pi-timeline-badge class="pi-custom-badge">${CH}</pi-timeline-badge>
+        <pi-timeline-panel ><h4>Second Timeline Entry</h4></pi-timeline-panel>
+      </pi-timeline-entry>
+      <pi-timeline-entry>
+        <pi-timeline-badge class="pi-custom-badge">${CH}</pi-timeline-badge>
+        <pi-timeline-panel ><h4>First Timeline Entry</h4></pi-timeline-panel>
+      </pi-timeline-entry>
+    </pi-timeline>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

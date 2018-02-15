@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image/>
+        <name>filter.svg</name>
+        <size_bytes>2034</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-17 10:41:05</sys_created_on>
+        <sys_id>3c5caae4db2ac7000c68f1910f96192a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>filter.svg</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>db_image_3c5caae4db2ac7000c68f1910f96192a</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-11-17 10:41:12</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes/>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>image</file_name>
+        <image_height/>
+        <image_width/>
+        <size_bytes>2034</size_bytes>
+        <size_compressed>931</size_compressed>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-17 10:41:12</sys_created_on>
+        <sys_id>387c6e24db2ac7000c68f1910f9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-11-17 10:41:12</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>3c5caae4db2ac7000c68f1910f96192a</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="387c6e24db2ac7000c68f1910f9619c1">387c6e24db2ac7000c68f1910f9619c1</sys_attachment>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-17 10:41:12</sys_created_on>
+        <sys_id>787c6e24db2ac7000c68f1910f9619c1</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>dVXLbttIELznK2a5lwQwqe6etyEpwArIXpyTs5dcAtmiJcIyaVC0ZezXbw31MKmNCQlk1zRrqqub5PTr29NWvZbtrmrqWcYFZaqs75tVVa9n2T8/vuUhU7tuWa+W26YuZ1ndZF/nn6a717XaV6tuM8tEnt8ytSmr9aY7Ra9Vuf+reZtlpEiJ4JcNN+FMYdt6N8s2Xfd8PZns9/tir4umXU+EiCagP6Zcv22r+vF3iRxjnPSr2fyTwjH9I8/V32Vdtsuuaa/V7WPZ3W+U8QWrz8YakS8qVwOiu2ZTPlXLY7nFffM02R3uyfMjZVd123JeNy/1LybL1trp5IAd1lfl7n6+aMtlV65gSLc57lpMJ/3SKethN08ITgdkrarVLPve3FXbMhncNo+9ufU5yo/2wquHars9LabrvH3ZIrt8LetmtTpWP6D9RZIfqPM8/wZtL225ym9f7p6qXWrBLv+xvMtU1y7r3UPTPs2y/nKLIj7nWmJB/XGlcgl8DL68q/zzW39cCqXCnqSeMwZqIf/fsm0GageKhwZ/IExrOuuSIGdZY76e83mJPiR7feG9GAHpFVNhgmYnVt0MYV8Y0ay1qMUYtkwxsPJF0CbgnzAHP5g1wCjBeuLYo9brqKO6YS68i14CkmMRDRvcqhaAgxYOTnrYk2dvVEKdNmzlSihFUWzwOgXpjog9NcV+DcVytDaGUxSE2Psh2wIwe0gytodZQKxTsuiAqnVCgxiNhAv0wCCQP4AHbqUbQxSD7amI0TryDh4sBP1gww52UeEjOYnWW5VgY3U0BrAVT6gyoFyIEjI+eMBahAmeOuiGANTmNGBmz5o0+ZRtYaUjcKcA1JFIENxgLzYueKQiXECoM8GiMymVCtRNAsCP+KApEhqKjsh4/xxL6BKhieRHii9X3ksEs2BkAnkZWXLz+3n7qb4ThkREIoTiDscmovNskvzhgsUJz4BOgh30YSCCucAH1Q/w1CUtniXyCE/+ahvwG8EJDdEGF0dyPoAXY9wYYecip3QjFNj+Dx5ke21iFBcOjwcs89S7IxwdR90Pu/OOMEk97AOHNKOcGAOLT6jWzpvoLtFoNZsD8xmOBSYgkEU7AuQFwWPUP9DinccEjuF3ksUFfNwxIMET1MlQHVCMhbfpBfBeys24m55O6RdtfvfkAj9b+NG8/Mz61+XtZvlcZviipDfdxQt1sh58D05BfzFNn9X5f5VtgLfyBwAA</data>
+        <length>1228</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="387c6e24db2ac7000c68f1910f9619c1">387c6e24db2ac7000c68f1910f9619c1</sys_attachment>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-17 10:41:12</sys_created_on>
+        <sys_id>f87c6e24db2ac7000c68f1910f9619c1</sys_id>
+    </sys_attachment_doc>
+</record_update>

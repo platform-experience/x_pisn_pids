@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piTabs</name>
+        <script><![CDATA[(function(angular) {
+	var app = angular.module('pi.core');
+	app.directive('piTabs', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@'
+			},
+			template: '<ul class="nav nav-tabs pi-tabs {{classes}}" role="tablist" ng-transclude></ul>'
+		};
+	});
+	
+	app.directive('piTab', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@',
+				onClick: '&',
+				item: '='
+			},
+			link: function(scope, element, attributes) {},
+			template: '<li class="{{classes}}" ng-click="onClick({item: item})" ng-model="item" ng-class="{active: item.selected==true}" ng-transclude></li>'
+		};
+	});
+
+	
+	
+})(angular);]]></script>
+        <script_name>piTabs</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-10-26 14:13:02</sys_created_on>
+        <sys_id>d6890eaddb4a0b004e5cfa131f961941</sys_id>
+        <sys_mod_count>70</sys_mod_count>
+        <sys_name>x_pisn_pids.piTabs</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_d6890eaddb4a0b004e5cfa131f961941</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-11-14 11:19:09</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

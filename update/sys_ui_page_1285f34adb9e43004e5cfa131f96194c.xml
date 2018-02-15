@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>true</direct>
+        <endpoint>x_pisn_pids_piHeader.do</endpoint>
+        <html><![CDATA[<nav id="mNavbar" class="navbar navbar-default" ng-class="{'navbar-fixed-top':fixedTop==true}">
+  <div class="container-fluid pi-header-container-fluid">
+    <div class="navbar-header pi-navbar-header">
+	  <div class="pi-navbar-toggle">
+      <button id="pi-toggle" type="button" class="collapsed navbar-toggle pi-navebar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8"
+        aria-expanded="false" ng-click="clickToggle($event)">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+		  
+		</div>
+		<div ng-if="state!=true" class="pi-navbar navbar-brand pi-navbar-brand" ng-transclude="bar">
+		</div>
+		<a ng-if="state==true" class="pi-navbar navbar-brand pi-navbar-title" href="javascript:void(0)">Menu</a><a ng-if="profileimg" href="{{profileurl}}"><img class="img-circle pi-profile-img" ng-if="profileimg" ng-src="{{profileimg}}"></img></a>
+    </div>
+    <div class="collapse navbar-collapse pi-navbar-collapse {{navbarCollapseClasses}}" id="bs-example-navbar-collapse-8">
+      <ul class="nav navbar-nav pi-navbar-nav" ng-transclude="menu">
+      </ul>
+		<ul ng-if="logo" class="nav navbar-nav pi-navbar-nav-logo">
+		<li class="pi-header-logo">
+			  <img src="{{logo}}"></img>
+			<div class="pi-header-logo-message"><span>{{logoMessage}}</span></div>
+		  </li>
+		</ul>
+    </div>
+	  <div ng-if="transcludeSummaryPresent()" class="pi-header-summary" ng-transclude="summary"></div>
+  </div>
+</nav>]]></html>
+        <name>piHeader</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-11-09 21:36:06</sys_created_on>
+        <sys_id>1285f34adb9e43004e5cfa131f96194c</sys_id>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>piHeader</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_page_1285f34adb9e43004e5cfa131f96194c</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-01 20:19:06</sys_updated_on>
+    </sys_ui_page>
+</record_update>

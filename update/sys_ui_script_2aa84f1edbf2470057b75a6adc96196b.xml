@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piTypeahead</name>
+        <script><![CDATA[(function(angular) {
+  var app = angular.module('pi.core');
+  app.directive('piTypeahead', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      scope: {
+        classes: '@',
+        name: '@',
+        placeholder: '@',
+        apiUrl: '=',
+        fieldCondition: '=',
+        fieldDisplay: '=',
+        onClick: '&',
+        classInput: '@',
+        classHint: '@',
+        classSelectable: '@',
+        minLength: '=?',
+        highlight: '=?',
+        limit: '=?'
+      },
+      link: function(scope) {
+        scope.$watch('name', function(newValues, oldValues, scope) {
+          scope.$watchGroup(
+            ['apiUrl', 'fieldCondition', 'fieldDisplay'],
+            function(newValues, oldValues, scope) {
+              scope.apiUrl = newValues[0];
+              scope.fieldCondition = newValues[1];
+              scope.fieldDisplay = newValues[2];
+
+              if (!scope.minLength) scope.minLength = 1;
+              if (!scope.highlight) scope.highlight = true;
+              if (!scope.limit) scope.limit = 100000;
+
+              scope.typeaheadElement = $(
+                '#' + scope.name + '.typeahead.form-control.pi-typeahead'
+              );
+              scope.typeaheadContainer = scope.typeaheadElement.parent();
+
+              scope.typeaheadElement.typeahead(
+                {
+                  minLength: scope.minLength,
+                  highlight: scope.highlight
+                },
+                {
+                  name: scope.name,
+                  limit: scope.limit,
+                  display: scope.fieldDisplay,
+                  source: function(query, syncResults, asyncResults) {
+                    var entrypoint =
+                      scope.apiUrl +
+                      '&sysparm_query=' +
+                      scope.fieldCondition +
+                      query;
+                    $.get(entrypoint, function(data) {
+                      asyncResults(data.result);
+                    });
+                  },
+                  classNames: {
+                    input: scope.classInput,
+                    hint: scope.classHint,
+                    selectable: scope.classSelectable
+                  }
+                }
+              );
+
+              scope.typeaheadElement.bind('typeahead:select', function(
+                ev,
+                suggestion
+              ) {
+                scope.typeaheadContainer.removeClass('pi-search-dim');
+                scope.onClick({ item: suggestion });
+                scope.typeaheadElement.blur();
+              });
+              scope.typeaheadElement.bind('typeahead:active', function(
+                ev,
+                suggestion
+              ) {
+                scope.typeaheadContainer.addClass('pi-search-dim');
+              });
+              scope.typeaheadElement.bind('typeahead:close', function(
+                ev,
+                suggestion
+              ) {
+                scope.typeaheadContainer.removeClass('pi-search-dim');
+                scope.typeaheadElement.blur();
+              });
+            }
+          );
+        });
+      },
+      template:
+        '<div class="pi-typeahead-container {{classes}}"><input id="{{name}}" class="typeahead form-control pi-typeahead" type="text" placeholder="{{placeholder}}" autocomplete="off" spellcheck="false" dir="auto"><img src="pi-typeahead-icon.svg" class="pi-typeahead-icon" role="presentation"></div>'
+    };
+  });
+})(angular);]]></script>
+        <script_name>piTypeahead</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-12-05 09:30:05</sys_created_on>
+        <sys_id>2aa84f1edbf2470057b75a6adc96196b</sys_id>
+        <sys_mod_count>92</sys_mod_count>
+        <sys_name>x_pisn_pids.piTypeahead</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_2aa84f1edbf2470057b75a6adc96196b</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-07 11:50:40</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

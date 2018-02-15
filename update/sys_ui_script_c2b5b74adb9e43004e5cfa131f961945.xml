@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piHeader</name>
+        <script><![CDATA[(function(angular) {
+	var app = angular.module('pi.core');
+	app.directive('piHeader', function() {
+		return {
+			restrict: 'E',
+			replace: true,
+			transclude: {
+				'bar': '?piHeaderBar',
+				'menu': '?piMenuItem',
+				'summary': '?piHeaderSummary',
+			},
+			scope: {
+				classes: '@',
+				menu: '=?',
+				logo: '@',
+				logoMessage: '@',
+				profileimg: '@',
+				profileurl: '@',
+				fixedTop: '@',
+				navbarCollapseClasses: '@'
+			},
+			link: function(scope) {
+				scope.clickToggle = function($event){
+					var classList = $event.currentTarget.classList;
+					if (jQuery.inArray( 'collapsed', classList )===-1)
+						scope.state=false;
+					else
+						scope.state=true;
+				};
+				
+				scope.$watch('logoMessage', function(newValue, oldValue) {
+                if (newValue)
+                    scope.logoMessage = newValue;
+					}, true);
+			},
+			controller: function($scope, $transclude) {
+				$scope.transcludeSummaryPresent = function() {
+				  return $transclude.isSlotFilled('summary');
+				};
+				
+				if(!$scope.fixedTop)
+					$scope.fixedTop = true;
+				
+			},
+			templateUrl: '/x_pisn_pids_piHeader.do'
+		};
+	});
+	
+	app.directive('piHeaderBar', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@'
+			},
+			template: '<ng-transclude></ng-transclude>'
+		};
+	});
+	
+	app.directive('piMenuItem', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@',
+				link: '@',
+				linkObj: '=?'
+			},
+			link: function(scope) {
+				scope.hideMenu = function(){
+					$(".navbar-collapse").collapse('hide');
+				};	
+			},
+			controller: function($scope,$window,$location) {
+       $scope.goTo = function(){
+		   if($scope.linkObj){
+			   if($location.search().id==$scope.linkObj.id)
+				   $scope.hideMenu();
+			   
+			   $location.search($scope.linkObj);
+			   
+		   } else {
+			   if($scope.link && $scope.link.length>0)
+			   $window.location.href = $scope.link;
+		   }
+	   };
+
+      },
+		template: '<li class="{{classes}}"><a href="#" ng-click="goTo()" class="pi-header-menu-item" role="link" ng-transclude></a></li>'
+			};
+		});
+	
+	app.directive('piHeaderSummary', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				classes: '@'
+			},
+			template: '<ng-transclude></ng-transclude>'
+		};
+	});
+		
+		
+	})(angular);]]></script>
+        <script_name>piHeader</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-11-09 21:38:22</sys_created_on>
+        <sys_id>c2b5b74adb9e43004e5cfa131f961945</sys_id>
+        <sys_mod_count>65</sys_mod_count>
+        <sys_name>x_pisn_pids.piHeader</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_c2b5b74adb9e43004e5cfa131f961945</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-07 11:49:46</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

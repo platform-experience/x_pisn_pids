@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_filter">
+    <sys_filter action="INSERT_OR_UPDATE">
+        <filter table="x_snc_value_metric_value_metric">customer_conversationLIKE^NQservicenow_productsLIKE^NQcustomer_accountLIKE^NQcustomer_accountLIKE^NQstrategic_driverLIKE^NQunit_of_measureLIKE^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <group/>
+        <last_used/>
+        <mobile>false</mobile>
+        <roles/>
+        <sys_class_name>sys_filter</sys_class_name>
+        <sys_created_by>fabio.petito</sys_created_by>
+        <sys_created_on>2017-11-16 16:14:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8d1f2a1cdb62c7000c68f1910f9619af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>fabio</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_filter_8d1f2a1cdb62c7000c68f1910f9619af</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-11-16 16:14:14</sys_updated_on>
+        <table>x_snc_value_metric_value_metric</table>
+        <title>fabio</title>
+        <user display_value="Fabio Petito">a6329a61dbd41300aa80d49fdf9619e1</user>
+    </sys_filter>
+</record_update>

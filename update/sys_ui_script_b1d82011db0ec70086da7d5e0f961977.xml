@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_pisn_pids.piSearch</name>
+        <script><![CDATA[(function(angular) {
+  var app = angular.module('pi.core');
+  app.directive('piSearch', function() {
+    return {
+      restrict: 'E',
+      transclude: true,
+      replace: true,
+      scope: {
+        onChange: '&',
+        onClick: '&',
+        records: '=',
+        text: '@',
+        dim: '@',
+        classes: '@',
+        searchicon: '@',
+        imgclasses: '@',
+        idelement: '@',
+        value: '='
+      },
+      link: function(scope, element, attrs, controller, transcludeFn) {
+        if (scope.value) scope.searchValue = scope.value;
+
+        
+
+        scope.$watch('idelement', function(newValues, oldValues, scope) {
+			
+			scope.engine = new Bloodhound({
+          initialize: true,
+          datumTokenizer: Bloodhound.tokenizers.whitespace,
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          local: scope.records
+        });
+
+        scope.$watch('records', function(newValue, oldValue) {
+          //console.log('***************************');
+          //console.log('wathing newValue: ', newValue);
+          //console.log('wathing oldValue: ', oldValue);
+          if (newValue != oldValue) {
+            scope.engine.clear();
+            scope.engine.add(newValue);
+            //console.log('$scope.engine new: ', scope.engine);
+          }
+        });
+			
+			
+          var idelement = scope.idelement;
+          scope.elementSelected = $('#' + idelement + ' .typeahead');//input field
+          scope.elementSelectedSingle = $('#' + idelement);//level with dim
+
+          var dim = false;
+          if (scope.dim) dim = scope.dim == 'true';
+
+          scope.elementSelected.typeahead({
+  minLength: 1,
+  highlight: true
+}, {
+            name: 'data',
+            limit: 10,
+            source: scope.engine
+          });
+
+          scope.elementSelectedSingle.click(function(e) {
+            e.stopPropagation();
+            if (dim == true)
+              scope.elementSelectedSingle.addClass('pi-search-dim');
+          });
+
+          $(document).on('click', function() {
+			  scope.elementSelected.removeClass('pi-search-dim');
+            scope.elementSelectedSingle.removeClass('pi-search-dim');
+          });
+
+          $('div.tt-menu').click(function(e) {
+            e.stopPropagation();
+            scope.elementSelectedSingle.removeClass('pi-search-dim');
+            var newValue = scope.elementSelected[0].value;
+            if (newValue) {
+              if (newValue.length > 0) {
+                console.log('newValue', newValue);
+                scope.searchValue = newValue;
+                scope.onChange({ search: scope.searchValue });
+                scope.onClick({ search: scope.searchValue });
+                scope.elementSelectedSingle.blur();
+                scope.elementSelected.blur();
+              }
+            }
+          });
+			
+			
+			scope.elementSelected.bind('keyup', function (e) {
+				//console.log('scope.elementSelected',scope.elementSelected);
+				//console.log('scope.elementSelected',scope.elementSelected);
+				if(e.keyCode==27 || e.keyCode=='27'){
+					scope.elementSelectedSingle.removeClass('pi-search-dim');
+					scope.elementSelected.blur();
+					scope.elementSelected[0].value = '';
+				}
+});
+			
+        });
+      },
+      controller: function($scope, $transclude) {
+        //$scope.$apply();
+      },
+      template:
+        '<div id="{{idelement}}" class="form-group has-feedback pi-search-container pi-component-container"><input type="search" class="form-control pi-search typeahead {{classes}}" placeholder="{{text}}" autocomplete="off" spellcheck="false" dir="auto" ng-model="searchValue" ng-model-options="{ debounce: 100 }" ng-change="onChange({search: searchValue})" ng-click="onClick({search: searchValue})"/><img src="{{searchicon}}" class="pi-search-search-icon {{imgclasses}}"></div>'
+    };
+  });
+})(angular);
+]]></script>
+        <script_name>piSearch</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>fabio</sys_created_by>
+        <sys_created_on>2017-10-25 12:30:46</sys_created_on>
+        <sys_id>b1d82011db0ec70086da7d5e0f961977</sys_id>
+        <sys_mod_count>300</sys_mod_count>
+        <sys_name>x_pisn_pids.piSearch</sys_name>
+        <sys_package display_value="PI Design System" source="x_pisn_pids">37ab2e53dbb9c300492fd311ce961948</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="PI Design System">37ab2e53dbb9c300492fd311ce961948</sys_scope>
+        <sys_update_name>sys_ui_script_b1d82011db0ec70086da7d5e0f961977</sys_update_name>
+        <sys_updated_by>fabio.petito</sys_updated_by>
+        <sys_updated_on>2017-12-05 13:36:37</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>
